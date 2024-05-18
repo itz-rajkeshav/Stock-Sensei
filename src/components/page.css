@@ -1,0 +1,100 @@
+.border-div {
+  padding: 1rem;
+  height: 35rem;
+  color: black;
+  width: 45rem;
+  border: 0.1rem solid black;
+}
+.Parent_input {
+  margin-left: 1rem;
+}
+.input {
+  font-family: "Kalam", cursive;
+  font-size: 1.3rem;
+  width: 15rem;
+  padding-left: 0.5rem;
+  /* margin-left: 2rem; */
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: rgb(246, 242, 242);
+  border: none;
+  color: black;
+  outline: none;
+  border-radius: 1rem;
+}
+.input::placeholder {
+  font-size: 1rem;
+}
+
+.inpu_t {
+  background-color: rgb(246, 242, 242);
+  box-shadow: 0px 0px 8px #ddd;
+  padding-right: 0.25rem;
+  border: 0.1rem solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18rem;
+  border-radius: 1rem;
+}
+
+.button {
+  background-color: rgb(246, 242, 242);
+  height: 2.5rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.material-symbols-outlined {
+  color: black;
+  outline: none;
+}
+.search {
+  outline: none;
+}
+.main_option {
+  display: flex;
+  flex-direction: column;
+  width: 18rem;
+  box-shadow: 0px 0px 8px #ddd;
+  border-radius: 1rem;
+  margin-top: 0.6rem;
+  max-height: 14rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  gap: 1.3rem;
+  padding: 0.5rem;
+}
+.option_1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 2.7rem;
+  gap: 0.8rem;
+}
+.option_1:hover {
+  background-color: #efefef;
+}
+
+.one {
+  width: 5.5rem;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.name {
+  width: 50%;
+}

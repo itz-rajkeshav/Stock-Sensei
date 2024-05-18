@@ -1,0 +1,11 @@
+.draglayer cursor-crosshair {
+  margin-right: 0rem;
+}
+.js-plotly-plot {
+  padding: 0rem;
+  margin: 0rem;
+}
+.seperation {
+  display: flex;
+  flex-direction: row;
+}
