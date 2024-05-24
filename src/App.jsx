@@ -1,15 +1,13 @@
 import { useState } from "react";
 import "./App.css";
-import Search from "./components/search.jsx";
-// import StockChart from "./components/graph.jsx";
-
+import Firstpage from "./components/Firstpage.jsx";
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
       <div className="main">
-        <Search />
+        <Firstpage></Firstpage>
       </div>
     </>
   );
