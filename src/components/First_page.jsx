@@ -1,40 +1,41 @@
-import { React, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Firstpage.css";
 import axios from "axios";
-function Firstpage() {
-  const [company_name, setcompany_name] = useState("");
+// import Second_page from "./Second_page";
+
+function First_page({ setCompanyName }) {
+  const [inputValue, setInputValue] = useState("");
   const [posts, setPosts] = useState([]);
-  const [show_option, setshow_option] = useState(false);
-  const handleCompany_name = (e) => {
-    setcompany_name(e.target.value);
-    // console.log(company_name);
+  const [showOption, setShowOption] = useState(false);
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+    setCompanyName(e.target.value);
   };
-  const handle_input = (symbol) => {
-    setcompany_name(symbol);
-    setshow_option(false);
+
+  const handleInput = (symbol) => {
+    setInputValue(symbol);
+    setShowOption(false);
+    setCompanyName(symbol);
   };
+
   useEffect(() => {
-    if (company_name.trim() !== "") {
+    if (inputValue.trim() !== "") {
       axios
         .get(
-          `https://financialmodelingprep.com/api/v3/search?query=${company_name}&apikey=Ics7Y2PEBKeY6hzc1OaM99DeFPSmpmZb`
+          `https://financialmodelingprep.com/api/v3/search?query=${inputValue}&apikey=Ics7Y2PEBKeY6hzc1OaM99DeFPSmpmZb`
         )
         .then((res) => {
-          console.log(res);
           setPosts(res.data);
-          setshow_option(true);
+          setShowOption(true);
         })
         .catch((err) => {
           console.log(err);
         });
     } else {
-      setshow_option(false);
+      setShowOption(false);
     }
-  }, [company_name]);
-  // function handle_name(post) {
-  //   setcompany_name(post.symbol);
-  //   setshow_option(false);
-  // }
+  }, [inputValue]);
 
   return (
     <div>
@@ -49,8 +50,8 @@ function Firstpage() {
           <div className="Parent_input">
             <div className="inpu_t">
               <input
-                value={company_name}
-                onChange={handleCompany_name}
+                value={inputValue}
+                onChange={handleInputChange}
                 type="input"
                 className="input"
                 placeholder="Search Company Symbol "
@@ -62,24 +63,23 @@ function Firstpage() {
               </div>
             </div>
           </div>
-          {show_option && (
+          {showOption && (
             <div className="main_option">
-              {posts.map((post) => {
-                return (
-                  <div
-                    className="option_1 "
-                    onClick={() => handle_input(post.symbol)}
-                  >
-                    <span className="symbol">{post.symbol}</span>
-                    <span className="name">{post.name}</span>
-                  </div>
-                );
-              })}
+              {posts.map((post) => (
+                <div
+                  className="option_1"
+                  onClick={() => handleInput(post.symbol)}
+                  key={post.symbol}
+                >
+                  <span className="symbol">{post.symbol}</span>
+                  <span className="name">{post.name}</span>
+                </div>
+              ))}
             </div>
           )}
         </div>
         <div className="image">
-          <img src="stock_1.png" width="692px" height="452px"></img>
+          <img src="stock_1.png" width="692px" height="452px" alt="Stock" />
         </div>
         <div className="container">
           <div className="text">
@@ -99,7 +99,7 @@ function Firstpage() {
           <div className="company">
             <button
               className="button"
-              onClick={() => handle_input("AAPL")}
+              onClick={() => handleInput("AAPL")}
               type="button"
             >
               Apple
@@ -107,14 +107,14 @@ function Firstpage() {
             <button
               className="button"
               type="button"
-              onClick={() => handle_input("MSFT")}
+              onClick={() => handleInput("MSFT")}
             >
               Microsoft
             </button>
             <button
               className="button"
               type="button"
-              onClick={() => handle_input("AMZN")}
+              onClick={() => handleInput("AMZN")}
             >
               Amazon
             </button>
@@ -123,21 +123,21 @@ function Firstpage() {
             <button
               className="button"
               type="button"
-              onClick={() => handle_input("GOOGL")}
+              onClick={() => handleInput("GOOGL")}
             >
               Alphabet
             </button>
             <button
               className="button"
               type="button"
-              onClick={() => handle_input("TSLA")}
+              onClick={() => handleInput("TSLA")}
             >
               Tesla
             </button>
             <button
               className="button"
               type="button"
-              onClick={() => handle_input("NVDA")}
+              onClick={() => handleInput("NVDA")}
             >
               Nvidia
             </button>
@@ -146,21 +146,21 @@ function Firstpage() {
             <button
               className="button"
               type="button"
-              onClick={() => handle_input("META")}
+              onClick={() => handleInput("META")}
             >
               Meta
             </button>
             <button
               className="button"
               type="button"
-              onClick={() => handle_input("BRK.A")}
+              onClick={() => handleInput("BRK.A")}
             >
               Berkshire Hathaway
             </button>
             <button
               className="button"
               type="button"
-              onClick={() => handle_input("PG")}
+              onClick={() => handleInput("PG")}
             >
               Procter & Gamble
             </button>
@@ -169,21 +169,21 @@ function Firstpage() {
             <button
               className="button"
               type="button"
-              onClick={() => handle_input("V")}
+              onClick={() => handleInput("V")}
             >
               Visa
             </button>
             <button
               className="button"
               type="button"
-              onClick={() => handle_input("JPM")}
+              onClick={() => handleInput("JPM")}
             >
               JPMorgan Chase
             </button>
             <button
               className="button"
               type="button"
-              onClick={() => handle_input("WMT")}
+              onClick={() => handleInput("WMT")}
             >
               Walmart
             </button>
@@ -193,8 +193,9 @@ function Firstpage() {
           <p>Empowering investors with market insights</p>
         </footer>
       </div>
+      {/* {company_name && <Second_page company_name={company_name} />} */}
     </div>
   );
 }
 
-export default Firstpage;
+export default First_page;

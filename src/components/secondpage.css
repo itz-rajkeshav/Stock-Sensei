@@ -1,0 +1,86 @@
+.secondpage {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(to right, #f5f7f8, #798e9e);
+}
+.txt {
+  position: absolute;
+  transform: translate(-50, -50);
+  top: 109%;
+  left: 45%;
+}
+
+#txt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  /* font-family: sans-serif; */
+  font-family: "Cinzel", serif;
+  letter-spacing: 3.5px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  /* position: relative; */
+  /* transform-style: preserve-3d; */
+  perspective: 100px;
+  /* -webkit-transform-style: preserve-3d; */
+  /* -webkit-perspective: 100px; */
+}
+#txt > b {
+  height: 2.5rem;
+  box-shadow: 0 0.4rem 0.3rem -0.3rem #aaa;
+  color: #979c9f;
+  /* background: linear-gradient(#aaf, #acf, #afc); */
+  background: linear-gradient(135deg, #1f7a8c, #1c2833);
+
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform-origin: bottom;
+  transform: rotateX(-85deg);
+  -webkit-transform-origin: bottom;
+  -webkit-transform: rotateX(-85deg);
+  animation: getUp 7s infinite;
+}
+#txt > b:nth-child(2) {
+  animation-delay: 0.25s;
+}
+#txt > b:nth-child(3) {
+  animation-delay: 0.5s;
+}
+#txt > b:nth-child(4) {
+  animation-delay: 0.75s;
+}
+#txt > b:nth-child(5) {
+  animation-delay: 1s;
+}
+#txt > b:nth-child(6) {
+  animation-delay: 1.25s;
+}
+#txt > b:nth-child(7) {
+  animation-delay: 1.5s;
+}
+#txt > b:nth-child(8) {
+  animation-delay: 1.75s;
+}
+@keyframes getUp {
+  10%,
+  50% {
+    transform: rotateX(0);
+  }
+  0%,
+  60%,
+  100% {
+    transform: rotateX(-85deg);
+  }
+}
+.chart_intro {
+  position: absolute;
+  transform: translate(-50, -50);
+  top: 120%;
+  left: 14%;
+  font-family: "Cinzel", serif;
+  /* color: linear-gradient(#1f7a8c, #1c2833); */
+  color: #1f7a8c;
+}

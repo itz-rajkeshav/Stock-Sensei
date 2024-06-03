@@ -15,6 +15,7 @@ body {
   background: linear-gradient(to right, #f5f7f8, #798e9e);
 }
 .nav {
+  position: fixed;
   width: 100%;
   height: 3.5rem;
   background-color: #1c2833;
@@ -22,6 +23,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 4;
 }
 .title h2 {
   color: #fff;
@@ -101,6 +103,7 @@ body {
 .input {
   padding-left: 0.6rem;
   font-size: 1.4rem;
+  text-transform: uppercase;
   color: #023e8a;
   width: 24rem;
   height: 2.9rem;
@@ -324,7 +327,7 @@ input::placeholder {
 } */
 .compan {
   position: absolute;
-  transform: translate(-50, -50);
+  /* transform: translate(-50, -50); */
   top: 58.9%;
   left: 60.7%;
   display: flex;
@@ -333,7 +336,7 @@ input::placeholder {
 }
 .compa {
   position: absolute;
-  transform: translate(-50, -50);
+  /* transform: translate(-50, -50); */
   top: 50.9%;
   left: 60.7%;
   display: flex;
@@ -345,13 +348,13 @@ input::placeholder {
   flex-direction: row;
   gap: 3.5rem;
   position: absolute;
-  transform: translate(-50, -50);
+  /* transform: translate(-50, -50); */
   top: 42.9%;
   left: 60.7%;
 }
 .comp {
   position: absolute;
-  transform: translate(-50, -50);
+  /* transform: translate(-50, -50); */
   top: 66.9%;
   left: 60.7%;
   display: flex;
@@ -363,8 +366,8 @@ input::placeholder {
   color: #00798c;
   background: linear-gradient(to right, #f5f7f8, #798e9e);
   border: 1px solid;
-  width: 5.5rem;
-  height: 2.5rem;
+  width: 5.7rem;
+  height: 2.8rem;
   border-radius: 1rem;
   background: linear-gradient(to right, #f5f7f8, #798e9e);
   transition: transform 0.3s ease-in-out;
@@ -374,13 +377,15 @@ input::placeholder {
   transform: scale(1.25);
 }
 .footer {
+  position: fixed;
   width: 100%;
   padding: 1rem 0;
   background-color: #1c2833;
   color: white;
   text-align: center;
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
+  z-index: 4;
 }
 .footer p {
   margin: 0;
