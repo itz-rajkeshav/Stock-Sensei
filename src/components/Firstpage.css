@@ -137,6 +137,7 @@ input::placeholder {
   transform: translate(-50, -50);
   top: 30%;
   left: 5%;
+  filter: drop-shadow(1px 1px 20px rgba(45, 174, 249, 0.618));
   /* z-index: 1; */
   /* width: 452px; */
   /* aspect-ratio: 1; */

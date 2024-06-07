@@ -25,20 +25,15 @@ Chartjs.register(
   LineController
 );
 
-function Second_page({ company_name, graph }) {
-  const [stockData, setStockData] = useState([]);
+function Second_page({ company_name, graph, set_stockData, dataType }) {
   const [dates, setDates] = useState([]);
-
-  // console.log(company_name);
   useEffect(() => {
-    fetchStockData();
+    fetchStockData(company_name);
   }, [company_name]);
-
-  const fetchStockData = () => {
+  const fetchStockData = (company_name) => {
     const apiKey = "5SIHDBdVQDRB0bD9PoH5uHGJMntBzADk";
-    const symbol = company_name;
-    console.log(company_name);
-    const apiUrl = `https://financialmodelingprep.com/api/v3/historical-price-full/${symbol}?apikey=${apiKey}`;
+    // console.log(company_name);
+    const apiUrl = `https://financialmodelingprep.com/api/v3/historical-price-full/${company_name}?apikey=${apiKey}`;
     axios
       .get(apiUrl)
       .then((response) => {
@@ -48,21 +43,33 @@ function Second_page({ company_name, graph }) {
           .slice(0, 90)
           .map((item) => item.date)
           .reverse();
-        const openPrices = historicalData
-          .slice(0, 90)
-          .map((item) => item.open)
-          .reverse();
-        // console.log(dates, openPrices);
-        setStockData(openPrices);
         setDates(dates);
-        // console.log(historicalData);
       })
       .catch((error) => {
         console.error("Error fetching stock data", error);
-        setStockData([]);
       });
   };
-
+  console.log(dataType);
+  const MarketCapTicks = (value) => {
+    if (value >= 1e9) return (value / 1e9).toFixed(2) + "B";
+    if (value >= 1e6) return (value / 1e6).toFixed(2) + "M";
+    if (value >= 1e3) return (value / 1e3).toFixed(2) + "K";
+    return value;
+  };
+  const formatTicks = (value) => {
+    switch (dataType) {
+      case "_market_cap":
+        return MarketCapTicks(value);
+      case "open_price":
+        return "$" + value.toFixed(2);
+      case "close_price":
+        return "$" + value.toFixed(2);
+      case "dividend":
+        return value;
+      default:
+        return value;
+    }
+  };
   return (
     <div>
       <div className="secondpage">
@@ -85,7 +92,7 @@ function Second_page({ company_name, graph }) {
                   label: `${company_name} `,
                   // fontfamily: "Cinzel, serif",
                   // color: "#1c2833",
-                  data: stockData,
+                  data: set_stockData,
                   fill: false,
                   borderColor: "#1f7a8c",
                   backgroundColor: "#90e0ef",
@@ -157,7 +164,7 @@ function Second_page({ company_name, graph }) {
                       family: "Cinzel, serif",
                     },
                     callback: function (value) {
-                      return "$" + value.toFixed(2);
+                      return formatTicks(value);
                     },
                   },
                   grid: {

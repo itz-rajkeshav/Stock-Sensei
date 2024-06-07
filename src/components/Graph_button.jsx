@@ -1,22 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Graph_button.css";
-
-function Graph_button({ setGraph }) {
-  function open_price() {
-    // console.log("open price");
+import {
+  closePriceApi,
+  dividendsApi,
+  marketcapApi,
+  openPriceApi,
+} from "../services/stockService";
+function Graph_button({ setGraph, company_name, stock, data }) {
+  async function open_price() {
+    const open_price = await openPriceApi(company_name);
     setGraph("opening price");
+    stock(open_price);
+    data("open_price");
   }
-  function market_cap() {
-    // console.log("market cap");
+  async function market_cap() {
+    const _market_cap = await marketcapApi(company_name);
     setGraph("market capital");
+    stock(_market_cap);
+    data("_market_cap");
   }
-  function close_price() {
-    // console.log("close price");
+  async function close_price() {
+    const close_price = await closePriceApi(company_name);
     setGraph("closing price");
+    stock(close_price);
+    data("close_price");
   }
-  function share_float() {
-    // console.log("share float");
-    setGraph("share float");
+  async function dividends() {
+    const dividend = await dividendsApi(company_name);
+    setGraph("Dividends");
+    stock(dividend);
+    data("dividend");
   }
   return (
     <div>
@@ -44,12 +57,12 @@ function Graph_button({ setGraph }) {
           <span> </span>
           Close Price
         </button>
-        <button className="  graph_button" onClick={share_float}>
+        <button className="  graph_button" onClick={dividends}>
           <span> </span>
           <span> </span>
           <span> </span>
           <span> </span>
-          Share Float
+          Dividends
         </button>
       </div>
     </div>

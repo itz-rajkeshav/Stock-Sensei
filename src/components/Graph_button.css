@@ -24,6 +24,7 @@
   width: 6rem;
   height: 2.8rem;
   transition: transform 0.3s ease-in-out;
+  /* filter: drop-shadow(1px 1px 20px rgba(45, 174, 249, 0.766)); */
 }
 .graph_button span:nth-child(1) {
   position: absolute;
