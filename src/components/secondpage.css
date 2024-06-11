@@ -84,3 +84,111 @@
   /* color: linear-gradient(#1f7a8c, #1c2833); */
   color: #1f7a8c;
 }
+.graph {
+  width: 800px;
+  height: 500px;
+  position: absolute;
+  transform: translate(-50, -50);
+  top: 125%;
+  left: 6%;
+}
+@media only screen and (max-width: 1247px) {
+  .graph {
+    position: absolute;
+    transform: translate(-50, -50);
+    top: 125%;
+    left: 5%;
+    width: 770px;
+  }
+}
+/* laptop size */
+
+@media only screen and (max-width: 1025px) {
+  .graph {
+    width: 680px;
+    position: absolute;
+    transform: translate(-50, -50);
+    top: 122%;
+    left: 4%;
+    height: 460px;
+  }
+  .chart_intro {
+    position: absolute;
+    transform: translate(-50, -50);
+    left: 11.5%;
+    top: 117%;
+  }
+  .button_1,
+  .button_2 {
+    display: flex;
+    gap: 2rem;
+  }
+}
+@media only screen and (max-width: 961px) {
+  .graph {
+    width: 630px;
+    position: absolute;
+    transform: translate(-50, -50);
+    top: 125%;
+    left: 4%;
+  }
+  .chart_intro {
+    position: absolute;
+    transform: translate(-50, -50);
+    left: 11.5%;
+  }
+}
+/* tablet size */
+@media only screen and (max-width: 769px) {
+  #txt {
+    position: absolute;
+    top: 108%;
+    font-size: 2rem;
+  }
+  .graph {
+    position: absolute;
+    transform: translate(-50, -50);
+    top: 120%;
+    left: 3%;
+    width: 730px;
+    height: 400px;
+  }
+
+  .chart_intro {
+    position: absolute;
+    transform: translate(-50, -50);
+    left: 11.5%;
+    top: 115.2%;
+  }
+}
+@media only screen and (max-width: 426px) {
+  .secondpage {
+    width: 742px;
+  }
+  #txt {
+    position: absolute;
+    left: 70%;
+    top: 134%;
+  }
+  .chart_intro {
+    position: absolute;
+    transform: translate(-50, -50);
+    left: 25.5%;
+    top: 143.2%;
+    width: 40rem;
+  }
+  .graph {
+    position: absolute;
+    transform: translate(-50, -50);
+    top: 148%;
+    left: 3%;
+    width: 730px;
+    height: 400px;
+  }
+  .graph {
+    position: absolute;
+    transform: translate(-50, -50);
+    top: 147%;
+    left: 1%;
+  }
+}

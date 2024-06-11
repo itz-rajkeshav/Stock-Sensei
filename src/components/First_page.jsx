@@ -46,6 +46,7 @@ function First_page({ setCompanyName }) {
             <h2>Stock Sensei</h2>
           </div>
         </div>
+
         <div className="content">
           <div className="Parent_input">
             <div className="inpu_t">
@@ -78,12 +79,104 @@ function First_page({ setCompanyName }) {
             </div>
           )}
         </div>
-        <div className="image">
-          <img src="stock_1.png" width="692px" height="452px" alt="Stock" />
-        </div>
-        <div className="container">
-          <div className="text">
-            Empower your financial future with the latest stock data.
+        <div className="middle_div">
+          <div className="image">
+            <img src="stock_1.png" alt="Stock" />
+          </div>
+
+          <div className="main_company">
+            <div className="company">
+              <button
+                className="button"
+                onClick={() => handleInput("AAPL")}
+                type="button"
+              >
+                Apple
+              </button>
+              <button
+                className="button"
+                type="button"
+                onClick={() => handleInput("MSFT")}
+              >
+                Microsoft
+              </button>
+              <button
+                className="button"
+                type="button"
+                onClick={() => handleInput("AMZN")}
+              >
+                Amazon
+              </button>
+            </div>
+            <div className="compa">
+              <button
+                className="button"
+                type="button"
+                onClick={() => handleInput("GOOGL")}
+              >
+                Alphabet
+              </button>
+              <button
+                className="button"
+                type="button"
+                onClick={() => handleInput("TSLA")}
+              >
+                Tesla
+              </button>
+              <button
+                className="button"
+                type="button"
+                onClick={() => handleInput("NVDA")}
+              >
+                Nvidia
+              </button>
+            </div>
+            <div className="compan">
+              <button
+                className="button"
+                type="button"
+                onClick={() => handleInput("META")}
+              >
+                Meta
+              </button>
+              <button
+                className="button"
+                type="button"
+                onClick={() => handleInput("BRK.A")}
+              >
+                Berkshire Hathaway
+              </button>
+              <button
+                className="button"
+                type="button"
+                onClick={() => handleInput("PG")}
+              >
+                Procter & Gamble
+              </button>
+            </div>
+            <div className="comp">
+              <button
+                className="button"
+                type="button"
+                onClick={() => handleInput("V")}
+              >
+                Visa
+              </button>
+              <button
+                className="button"
+                type="button"
+                onClick={() => handleInput("JPM")}
+              >
+                JPMorgan Chase
+              </button>
+              <button
+                className="button"
+                type="button"
+                onClick={() => handleInput("WMT")}
+              >
+                Walmart
+              </button>
+            </div>
           </div>
         </div>
         <div className="sentence p1">
@@ -95,100 +188,12 @@ function First_page({ setCompanyName }) {
         <div className="sentence p3">
           Stay informed and ahead of the curve by researching these companies.
         </div>
-        <div className="main_company">
-          <div className="company">
-            <button
-              className="button"
-              onClick={() => handleInput("AAPL")}
-              type="button"
-            >
-              Apple
-            </button>
-            <button
-              className="button"
-              type="button"
-              onClick={() => handleInput("MSFT")}
-            >
-              Microsoft
-            </button>
-            <button
-              className="button"
-              type="button"
-              onClick={() => handleInput("AMZN")}
-            >
-              Amazon
-            </button>
-          </div>
-          <div className="compa">
-            <button
-              className="button"
-              type="button"
-              onClick={() => handleInput("GOOGL")}
-            >
-              Alphabet
-            </button>
-            <button
-              className="button"
-              type="button"
-              onClick={() => handleInput("TSLA")}
-            >
-              Tesla
-            </button>
-            <button
-              className="button"
-              type="button"
-              onClick={() => handleInput("NVDA")}
-            >
-              Nvidia
-            </button>
-          </div>
-          <div className="compan">
-            <button
-              className="button"
-              type="button"
-              onClick={() => handleInput("META")}
-            >
-              Meta
-            </button>
-            <button
-              className="button"
-              type="button"
-              onClick={() => handleInput("BRK.A")}
-            >
-              Berkshire Hathaway
-            </button>
-            <button
-              className="button"
-              type="button"
-              onClick={() => handleInput("PG")}
-            >
-              Procter & Gamble
-            </button>
-          </div>
-          <div className="comp">
-            <button
-              className="button"
-              type="button"
-              onClick={() => handleInput("V")}
-            >
-              Visa
-            </button>
-            <button
-              className="button"
-              type="button"
-              onClick={() => handleInput("JPM")}
-            >
-              JPMorgan Chase
-            </button>
-            <button
-              className="button"
-              type="button"
-              onClick={() => handleInput("WMT")}
-            >
-              Walmart
-            </button>
+        <div className="container">
+          <div className="text">
+            Empower your financial future with the latest stock data.
           </div>
         </div>
+
         <footer className="footer">
           <p>Empowering investors with market insights</p>
         </footer>

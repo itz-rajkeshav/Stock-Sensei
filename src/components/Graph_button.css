@@ -101,3 +101,32 @@
     transform: translateY(-100%);
   }
 }
+/* for_tablet */
+@media only screen and (max-width: 769px) {
+  .graph_button {
+    width: 4.5rem;
+    height: 2.25rem;
+  }
+  .button_1 {
+    position: absolute;
+    top: 184%;
+    left: 22%;
+  }
+  .button_2 {
+    position: absolute;
+    top: 184%;
+    left: 55%;
+  }
+}
+@media only screen and (max-width: 426px) {
+  .button_1 {
+    position: absolute;
+    top: 213%;
+    left: 32%;
+  }
+  .button_2 {
+    position: absolute;
+    top: 213%;
+    left: 95%;
+  }
+}

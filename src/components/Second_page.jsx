@@ -73,17 +73,7 @@ function Second_page({ company_name, graph, set_stockData, dataType }) {
   return (
     <div>
       <div className="secondpage">
-        <div
-          className="graph"
-          style={{
-            width: "730px",
-            height: "500px",
-            position: "absolute",
-            transform: "translate(-50, -50)",
-            top: " 125%",
-            left: "9%",
-          }}
-        >
+        <div className="graph">
           <Line
             data={{
               labels: dates,
@@ -137,8 +127,17 @@ function Second_page({ company_name, graph, set_stockData, dataType }) {
                     color: "#1c2833",
                     font: {
                       family: "Cinzel, serif",
-                      size: 12,
+                      size: 14,
                     },
+                    callback: function (value) {
+                      const date = new Date(dates[value]);
+                      return date.toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                      });
+                    },
+                    maxRotation: 0,
+                    minRotation: 0,
                   },
                   grid: {
                     color: "rgb(28, 40, 51,0.4)",
