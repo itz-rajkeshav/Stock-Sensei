@@ -31,7 +31,7 @@ function Second_page({ company_name, graph, set_stockData, dataType }) {
     fetchStockData(company_name);
   }, [company_name]);
   const fetchStockData = (company_name) => {
-    const apiKey = "5SIHDBdVQDRB0bD9PoH5uHGJMntBzADk";
+    const apiKey = "apiKey1";
     // console.log(company_name);
     const apiUrl = `https://financialmodelingprep.com/api/v3/historical-price-full/${company_name}?apikey=${apiKey}`;
     axios

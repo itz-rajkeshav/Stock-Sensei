@@ -23,7 +23,7 @@ function First_page({ setCompanyName }) {
     if (inputValue.trim() !== "") {
       axios
         .get(
-          `https://financialmodelingprep.com/api/v3/search?query=${inputValue}&apikey=Ics7Y2PEBKeY6hzc1OaM99DeFPSmpmZb`
+          `https://financialmodelingprep.com/api/v3/search?query=${inputValue}&apikey=apiKey`
         )
         .then((res) => {
           setPosts(res.data);

@@ -3,6 +3,7 @@ import First_page from "./components/First_page.jsx";
 import Second_page from "./components/Second_page.jsx";
 import Graph_button from "./components/Graph_button.jsx";
 import "./App.css";
+// require("dotenv").config();
 function App() {
   const [company_name, setCompany_name] = useState("AAPL");
   const [graph, setgraph] = useState("Opening price");
