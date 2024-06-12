@@ -9,7 +9,7 @@ function App() {
   const [graph, setgraph] = useState("Opening price");
   const [set_stockData, setset_stockData] = useState("");
   const [dataType, setdataType] = useState("");
-
+  console.log(import.meta.env);
   return (
     <>
       <div className="main">

@@ -1,5 +1,5 @@
 import axios from "axios";
-const api_key1 = `apiKey1`;
+const api_key1 = import.meta.env.VITE_apiKey1;
 export async function marketcapApi(company_name) {
   const api1 = `
   https://financialmodelingprep.com/api/v3/historical-market-capitalization/${company_name}?limit=1000&apikey=${api_key1}`;
