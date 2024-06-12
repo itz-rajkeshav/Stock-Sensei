@@ -118,15 +118,38 @@
     left: 55%;
   }
 }
+/* for large mobile */
 @media only screen and (max-width: 426px) {
   .button_1 {
     position: absolute;
     top: 213%;
-    left: 32%;
+    left: 33%;
   }
   .button_2 {
     position: absolute;
     top: 213%;
     left: 95%;
+  }
+}
+/* for medium size mobile  */
+
+@media only screen and (max-width: 376px) {
+  .button_2 {
+    position: absolute;
+    top: 213%;
+    left: 109%;
+  }
+  .button_1 {
+    position: absolute;
+    top: 213%;
+    left: 35%;
+  }
+}
+/* for medium  mobile  */
+@media only screen and (max-width: 376px) {
+  .button_2 {
+    position: absolute;
+    top: 213%;
+    left: 129%;
   }
 }

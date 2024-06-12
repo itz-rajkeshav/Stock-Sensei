@@ -161,21 +161,22 @@
     top: 115.2%;
   }
 }
+/* for large mobile  */
 @media only screen and (max-width: 426px) {
   .secondpage {
     width: 742px;
   }
   #txt {
     position: absolute;
-    left: 70%;
+    left: 72%;
     top: 134%;
   }
   .chart_intro {
     position: absolute;
     transform: translate(-50, -50);
-    left: 25.5%;
+    left: 22.5%;
     top: 143.2%;
-    width: 40rem;
+    width: 39.5rem;
   }
   .graph {
     position: absolute;
@@ -190,5 +191,23 @@
     transform: translate(-50, -50);
     top: 147%;
     left: 1%;
+  }
+}
+/* for medium size mobile  */
+@media only screen and (max-width: 376px) {
+  #txt {
+    position: absolute;
+    left: 84%;
+    top: 134%;
+  }
+}
+/* for small mobile  */
+@media only screen and (max-width: 320px) {
+  .chart_intro {
+    position: absolute;
+    transform: translate(-50, -50);
+    left: 27.5%;
+    top: 143.2%;
+    width: 39.5rem;
   }
 }

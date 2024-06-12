@@ -520,9 +520,10 @@ img {
     left: 62.7%;
   }
 }
+/* for large mobile */
 @media only screen and (max-width: 426px) {
   .firstpage {
-    width: 741px;
+    width: 742px;
     height: 850px;
   }
   .inpu_t {
@@ -533,7 +534,7 @@ img {
   }
   .content {
     /* height: 38.4rem; */
-    padding-left: 5.5rem;
+    padding-left: 10.4rem;
     padding-top: 5rem;
   }
   img {
@@ -548,12 +549,12 @@ img {
   .sentence {
     position: absolute;
     top: 81%;
-    left: 10%;
+    left: 10.8%;
     width: 43rem;
   }
   .main_company {
     position: absolute;
-    top: 68%;
+    top: 68.7%;
     left: 30%;
     display: flex;
     gap: 0.6rem;
@@ -567,7 +568,39 @@ img {
   }
   .container {
     position: absolute;
-    left: 34%;
+    left: 36.9%;
+    top: 123%;
+    /* width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+  }
+}
+/* for medium  mobile  */
+@media only screen and (max-width: 376px) {
+  .container {
+    position: absolute;
+    left: 48.5%;
+    top: 123%;
+  }
+  .image {
+    transform: translate(-50, -50);
+    top: 26%;
+    left: 7%;
+  }
+}
+/* for small mobile  */
+@media only screen and (max-width: 320px) {
+  .main_company {
+    position: absolute;
+    top: 68.7%;
+    left: 45%;
+    display: flex;
+    gap: 0.6rem;
+  }
+  .container {
+    position: absolute;
+    left: 65.5%;
     top: 123%;
   }
 }
