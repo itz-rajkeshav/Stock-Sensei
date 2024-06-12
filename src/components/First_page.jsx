@@ -7,7 +7,7 @@ function First_page({ setCompanyName }) {
   const [inputValue, setInputValue] = useState("");
   const [posts, setPosts] = useState([]);
   const [showOption, setShowOption] = useState(false);
-
+  const API = import.meta.env.VITE_apiKey;
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
     setCompanyName(e.target.value);
@@ -23,9 +23,7 @@ function First_page({ setCompanyName }) {
     if (inputValue.trim() !== "") {
       axios
         .get(
-          `https://financialmodelingprep.com/api/v3/search?query=${inputValue}&apikey=${
-            import.meta.env.VITE_apiKey
-          }`
+          `https://financialmodelingprep.com/api/v3/search?query=${inputValue}&apikey=${API}`
         )
         .then((res) => {
           setPosts(res.data);
