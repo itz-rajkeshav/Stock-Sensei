@@ -26,12 +26,12 @@ Chartjs.register(
 );
 
 function Second_page({ company_name, graph, set_stockData, dataType }) {
+  const apiKey = import.meta.env.VITE_apiKey1;
   const [dates, setDates] = useState([]);
   useEffect(() => {
     fetchStockData(company_name);
   }, [company_name]);
   const fetchStockData = (company_name) => {
-    const apiKey = import.meta.env.VITE_apiKey1;
     // console.log(company_name);
     const apiUrl = `https://financialmodelingprep.com/api/v3/historical-price-full/${company_name}?apikey=${apiKey}`;
     axios
