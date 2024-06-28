@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import First_page from "./components/First_page.jsx";
 import Second_page from "./components/Second_page.jsx";
+import Third_page from "./components/Third_page.jsx";
 import Graph_button from "./components/Graph_button.jsx";
 import "./App.css";
 // require("dotenv").config();
@@ -26,6 +27,7 @@ function App() {
           stock={setset_stockData}
           data={setdataType}
         ></Graph_button>
+        <Third_page company_name={company_name}></Third_page>
       </div>
     </>
   );

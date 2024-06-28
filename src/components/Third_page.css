@@ -1,0 +1,52 @@
+.third_page {
+  min-height: 70vh;
+  background: linear-gradient(to right, #f5f7f8, #798e9e);
+}
+.box {
+  margin-top: 1rem;
+  margin-left: 8rem;
+  width: 74rem;
+  height: 17rem;
+  padding: 4rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  border-radius: 1rem;
+  border: 0.1rem solid #00798ca8;
+}
+.detail {
+  font-family: "Cinzel", serif;
+  color: #00798c;
+  font-size: 1.3rem;
+  margin-left: 8rem;
+}
+.detailName {
+  width: 8rem;
+  font-family: "Cinzel", serif;
+  font-size: 1.3rem;
+}
+.detailValue {
+  width: 6rem;
+  font-weight: 900;
+}
+.one {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+  width: 17rem;
+}
+.logo {
+  height: 30px;
+  width: 30px;
+}
+.leftOne,
+.rightOne,
+.middleOne {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.mainOne {
+  display: flex;
+  justify-content: space-around;
+}

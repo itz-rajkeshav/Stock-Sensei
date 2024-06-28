@@ -49,7 +49,7 @@ function Second_page({ company_name, graph, set_stockData, dataType }) {
         console.error("Error fetching stock data", error);
       });
   };
-  console.log(dataType);
+  // console.log(dataType);
   const MarketCapTicks = (value) => {
     if (value >= 1e9) return (value / 1e9).toFixed(2) + "B";
     if (value >= 1e6) return (value / 1e6).toFixed(2) + "M";
@@ -185,9 +185,9 @@ function Second_page({ company_name, graph, set_stockData, dataType }) {
           <b>H</b>
         </div>
         <div className="chart_intro">
-          <p>
+          <h4>
             {` Dive into the ebb and flow of ${graph} over the last 3 month`}
-          </p>
+          </h4>
         </div>
       </div>
     </div>

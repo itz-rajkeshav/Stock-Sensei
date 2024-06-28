@@ -1,6 +1,6 @@
 .secondpage {
   display: flex;
-  min-height: 100vh;
+  min-height: 95vh;
   background: linear-gradient(to right, #f5f7f8, #798e9e);
 }
 .txt {

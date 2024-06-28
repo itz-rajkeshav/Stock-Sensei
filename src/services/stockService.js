@@ -10,7 +10,6 @@ export async function marketcapApi(company_name) {
     .map((cap) => cap.marketCap)
     .reverse();
 }
-
 export async function openPriceApi(company_name) {
   const apiUrl = `https://financialmodelingprep.com/api/v3/historical-price-full/${company_name}?apikey=${api_key1}`;
   const response = await axios.get(apiUrl);
