@@ -73,7 +73,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media only screen and (max-width: 768px) {
   .mainOne {
     grid-template-columns: 1fr;
@@ -85,29 +84,37 @@
     font-size: 1.5rem;
   }
 }
-
 @media only screen and (max-width: 480px) {
   .third_page {
-    width: 100%;
+    width: 42.4rem;
   }
-
   .box {
     padding: 1.5rem;
   }
-
   .one {
-    flex-direction: column;
-    align-items: flex-start;
+    /* flex-direction: column; */
+    /* align-items: flex-start; */
+    /* justify-content: space-between; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
   }
-
   .detailName,
   .detailValue {
     width: 100%;
     margin-left: 0;
     margin-top: 0.5rem;
   }
-
   .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .detailValue {
+    margin-left: 2.4rem;
+  }
+  .detailName {
     margin-bottom: 0.5rem;
   }
 }
