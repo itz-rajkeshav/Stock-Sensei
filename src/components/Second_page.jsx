@@ -28,6 +28,7 @@ Chartjs.register(
 function Second_page({ company_name, graph, set_stockData, dataType }) {
   const apiKey = import.meta.env.VITE_apiKey1;
   const [dates, setDates] = useState([]);
+  console.log(company_name);
   useEffect(() => {
     fetchStockData(company_name);
   }, [company_name]);

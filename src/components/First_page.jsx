@@ -1,29 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Firstpage.css";
 import axios from "axios";
 // import Second_page from "./Second_page";
 
 function First_page({ setCompanyName }) {
-  const [inputValue, setInputValue] = useState("");
+  // const [inputValue, setInputValue] = useState("");
+  const searchRef = useRef();
   const [posts, setPosts] = useState([]);
   const [showOption, setShowOption] = useState(false);
   const API = import.meta.env.VITE_apiKey;
   const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-    setCompanyName(e.target.value);
+    handleSearch(e.target.value);
+    // setCompanyName(e.target.value);
   };
-
   const handleInput = (symbol) => {
-    setInputValue(symbol);
+    // setInputValue(symbol);
+    searchRef.current.value = symbol;
     setShowOption(false);
     setCompanyName(symbol);
   };
-
-  useEffect(() => {
-    if (inputValue.trim() !== "") {
+  // console.log(inputValue);
+  const handleSearch = (search) => {
+    if (search.trim() !== "") {
       axios
         .get(
-          `https://financialmodelingprep.com/api/v3/search?query=${inputValue}&apikey=${API}`
+          `https://financialmodelingprep.com/api/v3/search?query=${search}&apikey=${API}`
         )
         .then((res) => {
           setPosts(res.data);
@@ -33,10 +34,10 @@ function First_page({ setCompanyName }) {
           console.log(err);
         });
     } else {
+      setPosts([]);
       setShowOption(false);
     }
-  }, [inputValue]);
-
+  };
   return (
     <div>
       <div className="firstpage">
@@ -46,12 +47,11 @@ function First_page({ setCompanyName }) {
             <h2>Stock Sensei</h2>
           </div>
         </div>
-
         <div className="content">
           <div className="Parent_input">
             <div className="inpu_t">
               <input
-                value={inputValue}
+                ref={searchRef}
                 onChange={handleInputChange}
                 type="input"
                 className="input"
@@ -66,11 +66,11 @@ function First_page({ setCompanyName }) {
           </div>
           {showOption && (
             <div className="main_option">
-              {posts.map((post) => (
+              {posts.map((post, index) => (
                 <div
                   className="option_1"
                   onClick={() => handleInput(post.symbol)}
-                  key={post.symbol}
+                  key={index}
                 >
                   <span className="symbol">{post.symbol}</span>
                   <span className="name">{post.name}</span>

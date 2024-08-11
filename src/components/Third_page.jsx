@@ -25,7 +25,7 @@ function Third_page({ company_name }) {
         // console.log(data);
         setdayHigh(data[0].dayHigh);
         setdayLow(data[0].dayLow);
-        setMarketcap(data[0].marketCap);
+        setMarketcap(formatNumber(data[0].marketCap), 3);
         setvolume(data[0].volume);
         setopenPrice(data[0].open);
         setclose(data[0].previousClose);
@@ -82,7 +82,7 @@ function Third_page({ company_name }) {
       try {
         const response3 = await fetch(API3);
         const data3 = await response3.json();
-        console.log(data3);
+        // console.log(data3);
         // setbeta(data3[0].beta);
       } catch (error) {
         console.error("Error fetching stock data", error);
@@ -92,6 +92,20 @@ function Third_page({ company_name }) {
       fetchData3();
     }
   }, [company_name, API3]);
+  const formatNumber = (number, decimalPlaces = 3) => {
+    const units = ["M", "B", "T"];
+    let formattedNumber = number;
+    let unitIndex = 0;
+
+    while (formattedNumber > 1000 && unitIndex < units.length) {
+      formattedNumber /= 1000;
+      unitIndex++;
+    }
+    return (
+      formattedNumber.toFixed(decimalPlaces) +
+      (unitIndex ? units[unitIndex - 1] : "")
+    );
+  };
   return (
     <div>
       <div className="third_page">

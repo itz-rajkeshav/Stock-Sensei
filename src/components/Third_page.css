@@ -1,52 +1,113 @@
 .third_page {
-  min-height: 70vh;
+  min-height: 100vh;
   background: linear-gradient(to right, #f5f7f8, #798e9e);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
 }
-.box {
-  margin-top: 1rem;
-  margin-left: 8rem;
-  width: 74rem;
-  height: 17rem;
-  padding: 4rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  border-radius: 1rem;
-  border: 0.1rem solid #00798ca8;
-}
+
 .detail {
   font-family: "Cinzel", serif;
   color: #00798c;
-  font-size: 1.3rem;
-  margin-left: 8rem;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
-.detailName {
-  width: 8rem;
-  font-family: "Cinzel", serif;
-  font-size: 1.3rem;
+
+.mainOne {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
-.detailValue {
-  width: 6rem;
-  font-weight: 900;
-}
-.one {
-  display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
-  align-items: center;
-  width: 17rem;
-}
-.logo {
-  height: 30px;
-  width: 30px;
-}
+
 .leftOne,
-.rightOne,
-.middleOne {
+.middleOne,
+.rightOne {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.5rem;
 }
-.mainOne {
+
+.one {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  background-color: #f0f4f7;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.one:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.detailName {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  color: #00798c;
+  flex: 1;
+}
+
+.detailValue {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #333;
+  margin-left: 1rem;
+}
+
+.logo {
+  height: 24px;
+  width: 24px;
+  margin-right: 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .box {
+    width: 95%;
+  }
+
+  .mainOne {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mainOne {
+    grid-template-columns: 1fr;
+  }
+  .third_page {
+    margin-bottom: 3rem;
+  }
+  .detail {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .third_page {
+    width: 100%;
+  }
+
+  .box {
+    padding: 1.5rem;
+  }
+
+  .one {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .detailName,
+  .detailValue {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .logo {
+    margin-bottom: 0.5rem;
+  }
 }
