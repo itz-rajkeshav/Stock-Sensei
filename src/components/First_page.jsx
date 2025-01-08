@@ -190,12 +190,12 @@ function First_page({ setCompanyName }) {
         </div>
         <div className="container">
           <div className="text">
-            Empower your financial future with the latest stock data.
+            Empower your financial future with the latest stock data...
           </div>
         </div>
 
         <footer className="footer">
-          <p>Empowering investors with market insights</p>
+          <p>Empowering investors with market insights..</p>
         </footer>
       </div>
       {/* {company_name && <Second_page company_name={company_name} />} */}
